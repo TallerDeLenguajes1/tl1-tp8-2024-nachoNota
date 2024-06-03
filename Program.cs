@@ -11,16 +11,13 @@ System.Console.WriteLine($"Cantidad de tareas: {random}");
 
 for (int i = 0; i < random; i++)
 {
-    int duracion = rdm.Next(10, 100);
     System.Console.WriteLine("Descripcion: ");
     string descripcion = Console.ReadLine();
-    int tareaId = i;
 
-    Tareas tarea = new Tareas(){
-        Duracion = duracion,
-        Descripcion = descripcion,
-        TareaId = tareaId
-    };
+    Tareas tarea = new Tareas();
+    tarea.TareaId = i;
+    tarea.Duracion = rdm.Next(10, 100);
+    tarea.Descripcion = descripcion;
     
     TareasPendientes.Add(tarea);
 }
